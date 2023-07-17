@@ -8,17 +8,24 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "ts": "yarn install typescript --save-dev -g",
+    "init": "yarn install && yarn run build && yarn run start",
     "start": "node dist/app.js",
-    "build": "npx tsc",
-    "deploy": "node dist/app.js"
+    "build": "tsc --build",
+    "watch": "tsc --watch",
+    "rebuild": "yarn run build && yarn run start"
   },
   "dependencies": {
-    "http-proxy": "^1.18.1"
+    "http-proxy": "^1.18.1",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@types/http-proxy": "^1.17.10",
     "@types/node": "^18.15.11",
-    "tsc": "^2.0.4",
     "typescript": "^5.0.4"
+  },
+  "packageManager": "yarn@1.22.19",
+  "engines": {
+    "node": ">=18.4.0"
   }
 }
